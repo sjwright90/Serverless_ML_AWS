@@ -1,0 +1,16 @@
+SET VARS:
+PLATFORM="linux/amd64"
+TAG="docker/image"
+NAME="test_image"
+
+BUILD:
+docker build --platform $PLATFORM -t TAG .
+
+TEST:
+docker run --name $NAME -d -p 9000:8080 --platform #PLATFORM $TAG:latest
+
+curl "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{event}' [format your event e.g. making sure to escape charactes as needed '{"path":"api/endpoint", "body":"{\"KEY\":\"VALUE\"}"}]
+
+docker kill $NAME
+
+docker system prune -f [clean up unused docker resources]

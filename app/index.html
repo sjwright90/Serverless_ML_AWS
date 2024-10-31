@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Machine Learning Model</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <!-- AWS SDK -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.814.0.min.js"></script>
+    <!-- Amazon Cognito Identity SDK -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@5.2.4/dist/amazon-cognito-identity.min.js"></script>
+    <!-- Local Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/cognito-auth.js"></script>
+    <script src="js/login.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>My Machine Learning Model</h1>
+    </header>
+
+    <section class="form-wrap">
+        <h1>Login</h1>
+        <form id="signinForm">
+            <input type="email" id="emailInputSignin" placeholder="Email" required>
+            <input type="password" id="passwordInputSignin" placeholder="Password" pattern=".*" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+        <h1>Reset Password</h1>
+        <form id="forgotPasswordForm">
+            <input type="email" id="emailInputForgotPassword" placeholder="Email" required><br><br>
+            <input type="submit" value="Forgot Password">
+        </form>
+    </section>
+
+
+
+</body>
+
+</html>
